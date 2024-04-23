@@ -122,7 +122,7 @@ export async function createUserWallet(
 					TableName: tableName,
 					Item: {
 						pk: `USER#${user_id}`,
-						sk: `TRANSACTION#${id}#CREATED_AT#${created_at}`,
+						sk: `TRANSACTION#${created_at}#${id}`,
 						userId: user_id,
 						transactionId: id,
 						description,
@@ -186,7 +186,7 @@ export async function updateUserWallet(
 					TableName: tableName,
 					Item: {
 						pk: `USER#${user_id}`,
-						sk: `TRANSACTION#${id}#CREATED_AT#${created_at}`,
+						sk: `TRANSACTION#${created_at}#${id}`,
 						userId: user_id,
 						transactionId: id,
 						description,
