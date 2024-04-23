@@ -81,7 +81,7 @@ export async function main(
 	}
 
 	/**
-	 * Since transactions maximum can only contain 10 item at maximum loop the transactions seems okay
+	 * Since maximum transactions can contain 10 items at max, loop is enough
 	 */
 	const failedTransactions: Payload["transactions"] = [];
 	const successTransactions: Payload["transactions"] = [];

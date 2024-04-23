@@ -266,7 +266,6 @@ export async function getTransactionsByUserId(
 			"#sk": "sk",
 		},
 		ScanIndexForward: sortValue === "asc",
-		Limit: 1,
 	};
 
 	if (exclusiveStartKey) {

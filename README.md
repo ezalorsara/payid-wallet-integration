@@ -39,7 +39,8 @@ and store your hmac254 value e.g
 4e8ed8cb73ab6a502d02825a2912e2313a3ea7b3a9e88336083d28984de2605d
 ```
 
-this is for HMAC authentication on webhook endpoint
+this is for HMAC authentication on webhook endpoint where for testing WebhookUrl
+we add Authorization to the header containing the encoded value of the payload or body
 
 6.) you can do.
 
@@ -59,3 +60,7 @@ please see package.json you can test other scripts like pnpm run test, etc..
 | UserPaymentTransactions | GET    | https://l1z8pbn8x3.execute-api.us-east-1.amazonaws.com/v1/users/{userId}/payment-transactions |
 | UserWalletAccountUrl    | GET    | https://l1z8pbn8x3.execute-api.us-east-1.amazonaws.com/v1/users/{userId}/wallet               |
 | WebhookUrl              | POST   | https://l1z8pbn8x3.execute-api.us-east-1.amazonaws.com/v1/wallet/top-up/notify                |
+
+#### Existing tools hmac 264 encoding
+
+https://www.freeformatter.com/hmac-generator.html
