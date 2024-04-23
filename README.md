@@ -2,41 +2,60 @@
 
 An example serverless app created with SST.
 
-## Getting Started
+## Getting started
 
-[**Read the tutorial**](https://sst.dev/examples/how-to-use-dynamodb-in-your-serverless-app.html)
-
-Install the example.
+1.) install and setup aws cli v2, here is the [instruction](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+2.) configure your aws account profile e.g
 
 ```bash
-$ npx create-sst@latest --template=examples/rest-api-dynamodb
-# Or with Yarn
-$ yarn create sst --template=examples/rest-api-dynamodb
-# Or with PNPM
-$ pnpm create sst --template=examples/rest-api-dynamodb
+    aws configure --profile mary
 ```
 
-## Commands
+3.) clone this repository and go to directory and install dependencies
 
-### `npm run dev`
+```bash
+git clone git@github.com:ezalorsara/payid-wallet-integration.git
+cd payid-wallet-integration
+pnpm i
+```
 
-Starts the Live Lambda Development environment.
+4.) Check the sst.config.ts file; you might need to adjust the profile value based on the profile name you used. For instance, if you maintain separate AWS accounts for development and production, and you've set up profiles like so:
 
-### `npm run build`
+```bash
+aws configure --profile primeagen-prod
+aws configure --profile primeagen-dev
+```
 
-Build your app and synthesize your stacks.
+Then in your sst.config.ts file, you would conditionally set the profile like this:
 
-### `npm run deploy [stack]`
+```typescript
+profile: _input.stage === "production" ? "primeagen-prod" : "primeagen-dev",
+```
 
-Deploy all your stacks to AWS. Or optionally deploy, a specific stack.
+5.) go to aws console and create a parameter store with name "webhook-topup-hmac256-secret"
+and store your hmac254 value e.g
 
-### `npm run remove [stack]`
+```bash
+4e8ed8cb73ab6a502d02825a2912e2313a3ea7b3a9e88336083d28984de2605d
+```
 
-Remove all your stacks and all of their resources from AWS. Or optionally removes, a specific stack.
+this is for HMAC authentication on webhook endpoint
 
-## Documentation
+6.) you can do.
 
-Learn more about the SST.
+```bash
+npm run dev
+```
 
-- [Docs](https://docs.sst.dev/)
-- [sst](https://docs.sst.dev/packages/sst)
+this will deploy sst on dev stage
+
+please see package.json you can test other scripts like npm run test, etc..
+
+#### DigitalWalletTopUpStack - Example API Routes
+
+| Name                    | Method | Path                                                                                          |
+| ----------------------- | ------ | --------------------------------------------------------------------------------------------- |
+| ApiEndpoint             |        | https://l1z8pbn8x3.execute-api.us-east-1.amazonaws.com                                        |
+| UserPaymentTransactions | GET    | https://l1z8pbn8x3.execute-api.us-east-1.amazonaws.com/v1/users/{userId}/payment-transactions |
+| UserWalletAccountUrl    | GET    | https://l1z8pbn8x3.execute-api.us-east-1.amazonaws.com/v1/users/{userId}/wallet               |
+| WebhookUrl              | POST   | https://l1z8pbn8x3.execute-api.us-east-1.amazonaws.com/v1/wallet/top-up/notify                |
