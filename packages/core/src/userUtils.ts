@@ -115,6 +115,12 @@ export async function createUserWallet(
 						createdAt: created_at,
 						updatedAt: updated_at,
 					},
+					ConditionExpression:
+						"attribute_not_exists(#pk) AND attribute_not_exists(#sk)",
+					ExpressionAttributeNames: {
+						"#pk": "pk",
+						"#sk": "sk",
+					},
 				},
 			},
 			{
@@ -135,9 +141,16 @@ export async function createUserWallet(
 						createdAt: created_at,
 						updatedAt: updated_at,
 					},
+					ConditionExpression:
+						"attribute_not_exists(#pk) AND attribute_not_exists(#sk)",
+					ExpressionAttributeNames: {
+						"#pk": "pk",
+						"#sk": "sk",
+					},
 				},
 			},
 		],
+		ClientRequestToken: id, // unique transaction id
 	};
 
 	try {
@@ -208,6 +221,7 @@ export async function updateUserWallet(
 				},
 			},
 		],
+		ClientRequestToken: id, // unique transaction id
 	};
 
 	/**
