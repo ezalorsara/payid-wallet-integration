@@ -44,12 +44,12 @@ this is for HMAC authentication on webhook endpoint
 6.) you can do.
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 this will deploy sst on dev stage
 
-please see package.json you can test other scripts like npm run test, etc..
+please see package.json you can test other scripts like pnpm run test, etc..
 
 #### DigitalWalletTopUpStack - Example API Routes
 
