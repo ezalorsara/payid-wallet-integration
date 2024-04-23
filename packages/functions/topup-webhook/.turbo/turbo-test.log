@@ -1,0 +1,18 @@
+
+> @payid-wallet-integration/functions-topup-webhook@0.0.0 test /Users/joedparin/study/payid-wallet-integration/packages/functions/topup-webhook
+> sst bind vitest
+
+
+[7m[1m[34m DEV [39m[22m[27m [34mv1.5.0[39m [90m/Users/joedparin/study/payid-wallet-integration/packages/functions/topup-webhook[39m
+
+ [32m✓[39m [2msrc/[22mnotify[2m.spec.ts[22m[2m (1)[22m
+   [32m✓[39m dummy
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m   Start at [22m 01:53:36
+[2m   Duration [22m 550ms[2m (transform 184ms, setup 0ms, collect 75ms, tests 2ms, environment 0ms, prepare 165ms)[22m
+
+
+[1m[7m[32m PASS [39m[27m[22m[32m Waiting for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m

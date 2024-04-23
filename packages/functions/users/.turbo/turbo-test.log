@@ -1,0 +1,21 @@
+
+> @payid-wallet-integration/functions-users-transactions@0.0.0 test /Users/joedparin/study/payid-wallet-integration/packages/functions/users/transactions
+> sst bind vitest
+
+
+[7m[1m[34m DEV [39m[22m[27m [34mv1.5.0[39m [90m/Users/joedparin/study/payid-wallet-integration/packages/functions/users/transactions[39m
+
+[?25l [32m✓[39m [2msrc/[22mgetPaymentTransactions[2m.spec.ts[22m[2m (1)[22m
+   [32m✓[39m dummy
+[?25l[2K[1A[2K[1A[2K[G [32m✓[39m [2msrc/[22mgetPaymentTransactions[2m.spec.ts[22m[2m (1)[22m
+   [32m✓[39m dummy
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m   Start at [22m 01:53:35
+[2m   Duration [22m 760ms[2m (transform 212ms, setup 0ms, collect 155ms, tests 4ms, environment 0ms, prepare 137ms)[22m
+
+
+[1m[7m[32m PASS [39m[27m[22m[32m Waiting for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+[?25h
